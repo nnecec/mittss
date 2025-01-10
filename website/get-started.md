@@ -1,11 +1,13 @@
-# Get started
+# Mittss
+
+<div style="display: flex; gap: 8px; margin-top: 16px">
+  <img src="https://img.shields.io/npm/l/mittss" alt="MIT" />
+  <img src="https://img.shields.io/npm/v/mittss" alt="NPM Version" />
+  <img src="https://img.shields.io/bundlejs/size/mittss" alt="npm package minimized gzipped size" />
+  <img src="https://img.shields.io/npm/unpacked-size/mittss/latest" alt="NPM Unpacked Size (with version)" />
+</div>
 
 > forked from [mitt](https://github.com/developit/mitt)
-
-![MIT](https://img.shields.io/npm/l/mittss)
-![NPM Version](https://img.shields.io/npm/v/mittss)
-![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/mittss)
-![NPM Unpacked Size (with version)](https://img.shields.io/npm/unpacked-size/mittss/latest)
 
 ## What is Mittss?
 

@@ -33,7 +33,10 @@ pnpm add mittss
 
 ## Usage
 
-### Basic Example
+Visit the [documentation website](https://nnecec.github.io/mittss/) to explore
+more guides and API references.
+
+### Basic usage
 
 ```javascript
 import { Emitter } from 'mittss'

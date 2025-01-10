@@ -95,7 +95,7 @@ emitter.emit('foo', { foo: 'bar' })
 Invoke a handler for the given type. If present, `'*'` handlers areinvoked after
 type-matched handlers.
 
-The handler will be removed after its first invoke.
+The handler will be removed after its first invoked.
 
 ```typescript
 const onFoo = ev => {} // ev: { foo: 'bar' }
@@ -113,4 +113,4 @@ emitter.emit('foo', { foo: 'bar' })
 
 - `handler` `Handler<T> | WildcardHandler<T>`
 
-  Any value (object is recommended and powerful), passed to each handler
+  Function to call in response to given event
