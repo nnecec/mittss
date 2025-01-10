@@ -3,8 +3,10 @@
 <div style="display: flex; gap: 8px; margin-top: 16px">
   <img src="https://img.shields.io/npm/l/mittss" alt="MIT" />
   <img src="https://img.shields.io/npm/v/mittss" alt="NPM Version" />
+  <img src="https://img.shields.io/github/stars/nnecec/mittss" alt="GitHub Repo stars" />
+  <img src="https://img.shields.io/github/actions/workflow/status/nnecec/mittss/ci.yml" alt="GitHub Actions Workflow Status" />
+  <img alt="Codecov (with branch)" src="https://img.shields.io/codecov/c/github/nnecec/mittss/main">
   <img src="https://img.shields.io/bundlejs/size/mittss" alt="npm package minimized gzipped size" />
-  <img src="https://img.shields.io/npm/unpacked-size/mittss/latest" alt="NPM Unpacked Size (with version)" />
 </div>
 
 > forked from [mitt](https://github.com/developit/mitt)

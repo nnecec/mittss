@@ -4,8 +4,9 @@
 
 ![MIT](https://img.shields.io/npm/l/mittss)
 ![NPM Version](https://img.shields.io/npm/v/mittss)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/nnecec/mittss/ci.yml)
+![Codecov (with branch)](https://img.shields.io/codecov/c/github/nnecec/mittss/main)
 ![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/mittss)
-![NPM Unpacked Size (with version)](https://img.shields.io/npm/unpacked-size/mittss/latest)
 
 ## What is Mittss?
 

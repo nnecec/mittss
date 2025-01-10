@@ -22,7 +22,7 @@ describe('Emitter basics', () => {
 })
 
 describe('Emitter features', () => {
-  const eventType = Symbol('eventType')
+  const symbolType = Symbol('eventType')
   type Events = {
     foo: unknown
     constructor: unknown
@@ -32,7 +32,7 @@ describe('Emitter features', () => {
     'baz:bat!': unknown
     'baz:baT!': unknown
     Foo: unknown
-    [eventType]: unknown
+    [symbolType]: unknown
   }
 
   let events: EventHandlerMap<Events>, emitter: Emitter<Events>
@@ -81,8 +81,8 @@ describe('Emitter features', () => {
     })
     it('can take symbols for event types', () => {
       const foo = () => {}
-      emitter.on(eventType, foo)
-      expect(events.get(eventType)).toEqual([foo])
+      emitter.on(symbolType, foo)
+      expect(events.get(symbolType)).toEqual([foo])
     })
     // Adding the same listener multiple times should register it multiple times.
     // See https://nodejs.org/api/events.html#events_emitter_on_eventname_listener
