@@ -5,7 +5,9 @@
   <img src="https://img.shields.io/npm/v/mittss" alt="NPM Version" />
   <img src="https://img.shields.io/github/stars/nnecec/mittss" alt="GitHub Repo stars" />
   <img src="https://img.shields.io/github/actions/workflow/status/nnecec/mittss/ci.yml" alt="GitHub Actions Workflow Status" />
-  <img alt="Codecov (with branch)" src="https://img.shields.io/codecov/c/github/nnecec/mittss/main">
+  <a href="https://codecov.io/github/nnecec/mittss">
+    <img src="https://codecov.io/github/nnecec/mittss/branch/main/graph/badge.svg?token=ojgghJz3ZZ"/>
+  </a>
   <img src="https://img.shields.io/bundlejs/size/mittss" alt="npm package minimized gzipped size" />
 </div>
 
