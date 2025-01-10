@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Mittss',
   description: 'Lightweight, extendable event emitter / pubsub.',
+  titleTemplate: ':title - Mittss',
+  base: process.env.NODE_ENV === 'production' ? '/mittss/' : '/',
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -17,13 +20,20 @@ export default defineConfig({
       { text: 'API', link: '/api' },
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/nnecec/mittss' }],
 
     footer: {
       message: 'MIT License.',
       copyright: 'Copyright © 2025-present nnecec',
     },
+
+    editLink: {
+      pattern: 'https://github.com/nnecec/mittss/edit/main/website/:path',
+    },
+
+    search: {
+      provider: 'local',
+    },
   },
+  lastUpdated: true,
 })

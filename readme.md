@@ -9,8 +9,8 @@
 
 ## What is Mittss?
 
-`Mittss` is an lightweight and simple event emitter / pubsub, make `mitt` as a
-class.
+`Mittss` is an lightweight and simple event emitter / pubsub, rewrite the `mitt`
+using a class.
 
 - **Lightweight**: weighs less than 300 bytes gzipped
 - **Useful**: a wildcard `"*"` event type listens to all events

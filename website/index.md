@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Mittss
-  text: Lightweight, extendable event emitter / pubsub.
+  text: Lightweight, extendable event-emitter / pubsub.
   tagline: forked from developit/mitt
   actions:
     - theme: brand
