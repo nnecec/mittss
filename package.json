@@ -1,9 +1,7 @@
 {
   "name": "mittss",
   "version": "0.1.0",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "access": "public"
   },
@@ -27,7 +25,8 @@
     "coverage": "vitest run --coverage",
     "docs:dev": "vitepress dev website",
     "docs:build": "vitepress build website",
-    "docs:preview": "vitepress preview website --port 8080"
+    "docs:preview": "vitepress preview website --port 8080",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
