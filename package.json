@@ -1,7 +1,9 @@
 {
   "name": "mittss",
-  "version": "0.1.1",
-  "files": ["dist"],
+  "version": "0.1.2",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
