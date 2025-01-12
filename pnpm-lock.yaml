@@ -24,8 +24,8 @@ importers:
         specifier: 3.0.0-beta.4
         version: 3.0.0-beta.4(vitest@3.0.0-beta.4(@types/node@22.10.5))
       bunchee:
-        specifier: ^6.2.0
-        version: 6.2.0(typescript@5.7.3)
+        specifier: ^6.3.0
+        version: 6.3.0(typescript@5.7.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -848,8 +848,8 @@ packages:
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
 
-  bunchee@6.2.0:
-    resolution: {integrity: sha512-kdZrbi+JFFm5ZsOqwXoYFG/783oiJc7gYAOiHrMr1r0NQJdmcDwadX+HHoczti3+VjLKmBqf+lzyvbDruG5f/Q==}
+  bunchee@6.3.0:
+    resolution: {integrity: sha512-MVwb/ewvjQLseYy9kQDd6bFWj5hLv+nzQcBjaIo3ti91hvkInDolYiM10weKGdqnCINGmr9asg6s/CXd2JRJjQ==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
@@ -2312,7 +2312,7 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
 
-  bunchee@6.2.0(typescript@5.7.3):
+  bunchee@6.3.0(typescript@5.7.3):
     dependencies:
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.30.1)
       '@rollup/plugin-json': 6.1.0(rollup@4.30.1)
