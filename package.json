@@ -1,9 +1,7 @@
 {
   "name": "mittss",
   "version": "0.1.2",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "access": "public"
   },
@@ -42,12 +40,12 @@
     "@biomejs/biome": "1.9.4",
     "@nnecec/biome-config": "^0.2.1",
     "@nnecec/tsconfig": "^0.2.3",
-    "@types/node": "^22.10.5",
-    "@vitest/coverage-v8": "3.0.0-beta.4",
-    "bunchee": "^6.3.0",
+    "@types/node": "^22.10.7",
+    "@vitest/coverage-v8": "3.0.1",
+    "bunchee": "^6.3.1",
     "typescript": "^5.7.3",
     "vitepress": "^1.5.0",
-    "vitest": "beta"
+    "vitest": "^3.0.1"
   },
-  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+  "packageManager": "pnpm@9.15.4"
 }
