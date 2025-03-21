@@ -33,7 +33,8 @@ const onWildcard = (type, ev) => {}
 emitter.on('*', onWildcard)
 
 const onFoo = ev => {}
-emitter.on('foo', onFoo)
+const remove = emitter.on('foo', onFoo)
+// remove could be calling
 ```
 
 ### Parameters
@@ -45,6 +46,12 @@ emitter.on('foo', onFoo)
 - `handler` `Handler<T> | WildcardHandler<T>`
 
   Function to call in response to given event
+
+### Returns
+
+- `remove` `Function`
+
+  A function to remove the event handler
 
 ## off
 
