@@ -27,15 +27,24 @@ export class Emitter<Events extends Record<EventType, unknown>> {
    * @param {string|symbol} type Type of event to listen for, or `'*'` for all events
    * @param {Function} handler Function to call in response to given event
    * @memberOf Emitter
+   * @returns {Function} Function to remove the event handler
    */
-  on<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void
-  on(type: '*', handler: WildcardHandler<Events>): void
-  on<Key extends keyof Events>(type: Key | '*', handler: GenericEventHandler<Events>): void {
+  on<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): () => void
+  on(type: '*', handler: WildcardHandler<Events>): () => void
+  on<Key extends keyof Events>(type: Key | '*', handler: GenericEventHandler<Events>): () => void {
     const handlers: Array<GenericEventHandler<Events>> | undefined = this.all.get(type)
     if (handlers) {
       handlers.push(handler)
     } else {
       this.all.set(type, [handler] as EventHandlerList<Events[keyof Events]>)
+    }
+    return () => {
+      if (type === '*') {
+        console.log('🚀 ~ Emitter<Events ~ return ~ type:', type, handler)
+        this.off(type, handler as WildcardHandler<Events>)
+      } else {
+        this.off(type, handler as Handler<Events[Key]>)
+      }
     }
   }
 

@@ -68,6 +68,14 @@ describe('Emitter features', () => {
       emitter.on('foo', bar)
       expect(events.get('foo')).toEqual([foo, bar])
     })
+    it('should return a function to remove the event handler', () => {
+      const foo = () => {}
+      const bar = () => {}
+      const remove = emitter.on('foo', foo)
+      emitter.on('foo', bar)
+      remove()
+      expect(events.get('foo')).toEqual([bar])
+    })
     it('should NOT normalize case', () => {
       const foo = () => {}
       emitter.on('FOO', foo)
