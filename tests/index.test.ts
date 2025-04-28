@@ -76,6 +76,30 @@ describe('Emitter features', () => {
       remove()
       expect(events.get('foo')).toEqual([bar])
     })
+    // Add test for wildcard handler unsubscribe
+    it('should return a function to remove the wildcard event handler', () => {
+      const foo = vi.fn()
+      const bar = vi.fn()
+      const removeFoo = emitter.on('*', foo)
+      emitter.on('*', bar)
+
+      // Initial state
+      expect(emitter.all.get('*')).toEqual([foo, bar])
+
+      // Remove the first wildcard handler using the returned function
+      removeFoo()
+
+      // Verify the first handler is removed
+      expect(emitter.all.get('*')).toEqual([bar])
+
+      // Emit an event to confirm the remaining handler works and the removed one doesn't
+      const testEvent = { detail: 'test' }
+      emitter.emit('foo', testEvent)
+
+      expect(foo).not.toHaveBeenCalled()
+      expect(bar).toHaveBeenCalledTimes(1)
+      expect(bar).toHaveBeenCalledWith('foo', testEvent)
+    })
     it('should NOT normalize case', () => {
       const foo = () => {}
       emitter.on('FOO', foo)
