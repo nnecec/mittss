@@ -27,15 +27,30 @@ export class Emitter<Events extends Record<EventType, unknown>> {
    * @param {string|symbol} type Type of event to listen for, or `'*'` for all events
    * @param {Function} handler Function to call in response to given event
    * @memberOf Emitter
+   * @returns {Function} Function to remove the event handler
    */
-  on<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void
-  on(type: '*', handler: WildcardHandler<Events>): void
-  on<Key extends keyof Events>(type: Key | '*', handler: GenericEventHandler<Events>): void {
-    const handlers: Array<GenericEventHandler<Events>> | undefined = this.all.get(type)
+  on<Key extends keyof Events>(
+    type: Key,
+    handler: Handler<Events[Key]>,
+  ): () => void
+  on(type: '*', handler: WildcardHandler<Events>): () => void
+  on<Key extends keyof Events>(
+    type: Key | '*',
+    handler: GenericEventHandler<Events>,
+  ): () => void {
+    const handlers: Array<GenericEventHandler<Events>> | undefined =
+      this.all.get(type)
     if (handlers) {
       handlers.push(handler)
     } else {
       this.all.set(type, [handler] as EventHandlerList<Events[keyof Events]>)
+    }
+    return () => {
+      if (type === '*') {
+        this.off(type, handler as WildcardHandler<Events>)
+      } else {
+        this.off(type, handler as Handler<Events[Key]>)
+      }
     }
   }
 
@@ -49,8 +64,12 @@ export class Emitter<Events extends Record<EventType, unknown>> {
    */
   off<Key extends keyof Events>(type: Key, handler?: Handler<Events[Key]>): void
   off(type: '*', handler: WildcardHandler<Events>): void
-  off<Key extends keyof Events>(type: Key | '*', handler?: GenericEventHandler<Events>): void {
-    const handlers: Array<GenericEventHandler<Events>> | undefined = this.all.get(type)
+  off<Key extends keyof Events>(
+    type: Key | '*',
+    handler?: GenericEventHandler<Events>,
+  ): void {
+    const handlers: Array<GenericEventHandler<Events>> | undefined =
+      this.all.get(type)
     if (handlers) {
       if (handler) {
         handlers.splice(handlers.indexOf(handler) >>> 0, 1)
@@ -71,7 +90,9 @@ export class Emitter<Events extends Record<EventType, unknown>> {
    * @memberOf Emitter
    */
   emit<Key extends keyof Events>(type: Key, evt: Events[Key]): void
-  emit<Key extends keyof Events>(type: undefined extends Events[Key] ? Key : never): void
+  emit<Key extends keyof Events>(
+    type: undefined extends Events[Key] ? Key : never,
+  ): void
   emit<Key extends keyof Events>(type: Key, evt?: Events[Key]): void {
     let handlers = this.all.get(type)
     if (handlers) {
@@ -97,7 +118,10 @@ export class Emitter<Events extends Record<EventType, unknown>> {
    */
   once<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void
   once(type: '*', handler: WildcardHandler<Events>): void
-  once<Key extends keyof Events>(type: Key | '*', handler: GenericEventHandler<Events>): void {
+  once<Key extends keyof Events>(
+    type: Key | '*',
+    handler: GenericEventHandler<Events>,
+  ): void {
     if (type === '*') {
       const onceHandler = ((type: Key, event: Events[Key]) => {
         ;(handler as WildcardHandler<Events>)(type, event)
