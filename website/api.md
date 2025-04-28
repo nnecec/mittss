@@ -34,7 +34,7 @@ emitter.on('*', onWildcard)
 
 const onFoo = ev => {}
 const remove = emitter.on('foo', onFoo)
-// remove could be calling
+// onFoo will be removed after calling remove() function
 ```
 
 ### Parameters
