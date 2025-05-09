@@ -7,6 +7,7 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/nnecec/mittss/ci.yml)
 [![codecov](https://codecov.io/github/nnecec/mittss/branch/main/graph/badge.svg?token=ojgghJz3ZZ)](https://codecov.io/github/nnecec/mittss)
 ![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/mittss)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nnecec/mittss)
 
 ## What is Mittss?
 
