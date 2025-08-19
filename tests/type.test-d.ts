@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
-
 import { beforeEach, describe, expectTypeOf } from 'vitest'
 import { Emitter, EventHandlerMap } from '../src'
 
@@ -23,8 +21,8 @@ describe(() => {
     emitter = new Emitter(events)
   })
   describe('.on()', () => {
-    expectTypeOf(emitter.on).parameter(0).toMatchTypeOf<'foo' | 'bar' | '*' | 'data'>()
-    expectTypeOf(emitter.on).parameter(1).parameter(0).toMatchTypeOf<string | number | Data | undefined>()
+    expectTypeOf(emitter.on).parameter(0).toExtend<'foo' | 'bar' | '*' | 'data'>()
+    expectTypeOf(emitter.on).parameter(1).parameter(0).toExtend<string | number | Data | undefined>()
 
     emitter.on('foo', onFoo)
     // @ts-expect-error
@@ -41,8 +39,8 @@ describe(() => {
   })
 
   describe('.off()', () => {
-    expectTypeOf(emitter.off).parameter(0).toMatchTypeOf<'foo' | 'bar' | '*' | 'data'>()
-    expectTypeOf(emitter.off).parameter(1).parameter(0).toMatchTypeOf<string | number | Data | undefined>()
+    expectTypeOf(emitter.off).parameter(0).toExtend<'foo' | 'bar' | '*' | 'data'>()
+    expectTypeOf(emitter.off).parameter(1).parameter(0).toExtend<string | number | Data | undefined>()
 
     // @ts-expect-error
     emitter.off('foo', onBar)
@@ -59,8 +57,8 @@ describe(() => {
   })
 
   describe('.emit()', () => {
-    expectTypeOf(emitter.emit).parameter(0).toMatchTypeOf<'foo' | 'bar' | '*' | 'data'>()
-    expectTypeOf(emitter.emit).parameter(1).toMatchTypeOf<string | number | Data | undefined>()
+    expectTypeOf(emitter.emit).parameter(0).toExtend<'foo' | 'bar' | '*' | 'data'>()
+    expectTypeOf(emitter.emit).parameter(1).toExtend<string | number | Data | undefined>()
 
     // @ts-expect-error
     emitter.emit('data', 'NOT VALID')
@@ -79,8 +77,8 @@ describe(() => {
   })
 
   describe('.once()', () => {
-    expectTypeOf(emitter.once).parameter(0).toMatchTypeOf<'foo' | 'bar' | '*' | 'data'>()
-    expectTypeOf(emitter.once).parameter(1).toMatchTypeOf<string | number | Data | undefined>()
+    expectTypeOf(emitter.once).parameter(0).toExtend<'foo' | 'bar' | '*' | 'data'>()
+    expectTypeOf(emitter.once).parameter(1).toExtend<string | number | Data | undefined>()
 
     emitter.once('foo', onFoo)
     // @ts-expect-error
