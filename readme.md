@@ -11,6 +11,8 @@
 
 ## What is Mittss?
 
+`mitt + class = mittss`
+
 `Mittss` is an lightweight and simple event emitter / pubsub, rewrite the `mitt`
 using a class.
 
@@ -20,6 +22,14 @@ using a class.
   [Node's EventEmitter](https://nodejs.org/docs/latest/api/events.html#class-eventemitter)
 - **Extendable**: easily extendable with inheritance.
 - **Zero Dependencies**: Works out of the box without additional libraries.
+
+## Differences from mitt
+
+`Emitter` is forked from [mitt](https://github.com/developit/mitt), with the
+following key differences:
+
+- Implemented using `class`, supporting inheritance and extension.
+- Provides a `once` method for one-time event listeners.
 
 ## Installation
 
@@ -120,14 +130,6 @@ const mitt = <Events extends Record<EventType, unknown>>(
 
 const emitter = mitt()
 ```
-
-## Differences from mitt
-
-`Emitter` is forked from [mitt](https://github.com/developit/mitt), with the
-following key differences:
-
-- Implemented using `class`, supporting inheritance and extension.
-- Provides a `once` method for one-time event listeners.
 
 ## Acknowledgments
 
